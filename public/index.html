@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Aadhil's Portfolio - Showcasing skills, projects, and contact information." />
+    <meta name="keywords" content="portfolio, Aadhil, web development, skills, projects" />
+    <meta name="author" content="Aadhil Nizar" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="%PUBLIC_URL%/logo-s.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <title>Aadhil's Portfolio</title>
+    
+    <!-- Add a loading style to prevent FOUC -->
+    <style>
+      .loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #000;
+        color: #fff;
+        font-family: Arial, sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Add loading fallback -->
+    <div id="root">
+      <div class="loading">Loading Portfolio...</div>
+    </div>
+    
+    <script>
+      // GitHub Pages SPA fix with error handling
+      (function() {
+        try {
+          var redirect = sessionStorage.redirect;
+          delete sessionStorage.redirect;
+          if (redirect && redirect != location.href) {
+            history.replaceState(null, null, redirect);
+          }
+        } catch (e) {
+          console.log('Redirect error:', e);
+        }
+      })();
+      
+      // Error handler for React
+      window.addEventListener('error', function(e) {
+        console.error('Global error:', e.error);
+      });
+    </script>
+  </body>
+</html>
