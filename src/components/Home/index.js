@@ -14,7 +14,7 @@ const Home = () => {
   const isMobile = useMediaQuery({ maxWidth: 768 }); // Detect mobile screen
 
   const nameArray = 'adhil'.split('');
-  const jobArray = 'Web Developer (Full Stack)|Frontend Dev | Freelancer'.split('');
+  const jobArray = 'Software Developer (Full Stack)|Frontend Dev | Freelancer'.split('');
 
   useEffect(() => {
     const timer = setTimeout(() => {
